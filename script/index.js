@@ -39,14 +39,24 @@ const createElement = (element) => {
  */
 // ---------------------------------
 
-const getDataByAPI = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const getDataByAPI = async (userInput = 'iphone') => {
+    getElementById('phone-container').innerHTML = '';
+    const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${userInput}`);
     const resJson = await res.json()
     const allPhons = resJson.data;
     allPhons.forEach(element => {
-        createElement(element)
+        createElement(element);
     });
 
-}
+};
 
 getDataByAPI()
+
+
+// ----------Searching Phone-----------
+const searchingPhone = () => {
+    const inputValue = getElementById('user-input').value;
+    if (inputValue !== ""){
+        getDataByAPI(inputValue);
+    }
+};
