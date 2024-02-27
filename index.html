@@ -23,30 +23,82 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="navbar bg-base-100">
-                <div class="flex-1">
-                    <a class="btn btn-ghost text-xl">daisyUI</a>
-                </div>
-                <div class="flex-none">
-                    <button class="btn btn-square btn-ghost">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            class="inline-block w-5 h-5 stroke-current">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
+    <header class="container mx-auto mt-6">
+        <nav class="flex justify-between bg-blue-100 py-4 px-6 rounded-full">
+            <div>
+                <button class="btn bg-blue-200 border-none outline-none uppercase text-2xl">Hot Gadgets</button>
+            </div>
+            <div>
+                <button class="btn bg-[#0D6EFD] text-white text-xl border-none outline-none">Sign Up</button>
             </div>
         </nav>
+        <!-- ------banner Section------ -->
+        <section class="mt-8">
+            <div class="text-center space-y-4">
+                <h1 class="text-[65px] font-semibold">Apple Iphone 13 Pro Max</h1>
+                <p>There are many variations of passages of Lorem Ipsum available,
+                    <br>
+                    but the majority have suffered alteration in some form, by injected humou.
+                </p>
+                <button class="btn bg-[#0D6EFD] text-white text-xl border-none outline-none">Buy Now</button>
+            </div>
+            <!-- ------banner image---- -->
+            <div class="flex items-center justify-center mt-[72px]">
+                <img src="./images/pngwing 2.png" alt="">
+                <img src="./images/pngwing 1.png" alt="">
+                <img src="./images/pngwing 3.png" alt="">
+            </div>
+        </section>
     </header>
-    <main>
 
+    <main class="container mx-auto">
+        <!-- ----Search Section hare---- -->
+        <section>
+            <div class="text-center space-y-6">
+                <h1 class="text-3xl font-semibold">Search your phone</h1>
+                <input class="bg-gray-300 px-4 py-3 rounded-xl w-[400px]" type="text"
+                    placeholder="🔍 Search your phone">
+                <button class="btn bg-[#0D6EFD] text-white text-xl border-none outline-none">Search</button>
+            </div>
+        </section>
     </main>
-    <footer>
 
+    <!-- --------Footer Section Hare------- -->
+    <footer class="bg-base-200 mt-28">
+        <div class="footer p-10 text-base-content container mx-auto">
+            <nav>
+                <h6 class="footer-title">Services</h6>
+                <a class="link link-hover">Branding</a>
+                <a class="link link-hover">Design</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Advertisement</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Company</h6>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Contact</a>
+                <a class="link link-hover">Jobs</a>
+                <a class="link link-hover">Press kit</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Legal</h6>
+                <a class="link link-hover">Terms of use</a>
+                <a class="link link-hover">Privacy policy</a>
+                <a class="link link-hover">Cookie policy</a>
+            </nav>
+            <form>
+                <h6 class="text-3xl font-semibold">Hot Gadgets</h6>
+                <fieldset class="form-control w-80">
+                    <label class="label">
+                        <span class="label-text">Enter your email address</span>
+                    </label>
+                    <div class="join">
+                        <input type="text" placeholder="username@site.com" class="input input-bordered join-item" />
+                        <button class="btn btn-primary join-item">Subscribe</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </footer>
 
 </body>
