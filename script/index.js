@@ -44,7 +44,14 @@ const getDataByAPI = async (userInput = 'iphone') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${userInput}`);
     const resJson = await res.json()
     const allPhons = resJson.data;
-    allPhons.forEach(element => {
+    if (allPhons.length > 15) {
+        getElementById("see-more").classList.remove('hidden');
+    }
+    else {
+        getElementById('see-more').classList.add('hidden')
+    }
+    const short = allPhons.slice(1, 10);
+    short.forEach(element => {
         createElement(element);
     });
 
@@ -56,7 +63,24 @@ getDataByAPI()
 // ----------Searching Phone-----------
 const searchingPhone = () => {
     const inputValue = getElementById('user-input').value;
-    if (inputValue !== ""){
+    if (inputValue !== "") {
         getDataByAPI(inputValue);
+
     }
 };
+
+
+
+// ---------See more phone------
+const seeMore = () => {
+    const inputValue = getElementById('user-input').value;
+    fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
+        .then(res => res.json())
+        .then(data => {
+            const datas = data.data;
+            datas.forEach(element => {
+                createElement(element);
+            });
+        })
+    getElementById('see-more').classList.add('hidden');
+}
