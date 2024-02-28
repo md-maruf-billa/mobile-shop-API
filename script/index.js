@@ -16,7 +16,7 @@ const createElement = (element) => {
                 <h2 class="text-2xl font-semibold">${element.phone_name}</h2>
                 <p>${element.slug}</p>
                 <div>
-                    <button class="btn bg-[#0D6EFD] text-white text-xl border-none outline-none">Show
+                    <button onclick ="showMoreDetails('${element.slug}')" class="btn bg-[#0D6EFD] text-white text-xl border-none outline-none">Show
                         Details</button>
                 </div>
             </div>
@@ -83,4 +83,29 @@ const seeMore = () => {
             });
         })
     getElementById('see-more').classList.add('hidden');
+}
+
+
+
+// --------Modal details-----
+const showMoreDetails = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+        .then(response => response.json())
+        .then(data_all => {
+            const single_phone = data_all.data;
+            console.log(single_phone);
+
+            my_modal_5.showModal();
+            getElementById('phone-img').src = single_phone.image;
+            getElementById('phone-name').innerText = single_phone?.name;
+            getElementById('phone-storage').innerText = single_phone?.mainFeatures.storage;
+            getElementById('display-size').innerText =single_phone?.mainFeatures.displaySize;
+            getElementById('phone-chipset').innerText =single_phone?.mainFeatures.chipSet;
+            getElementById('phone-memory').innerText =single_phone?.mainFeatures.storage;
+            getElementById('phone-slug').innerText =single_phone?.slug;
+            getElementById('phone-relese').innerText =single_phone?.releaseDate
+            ;
+            getElementById('phone-brand').innerText =single_phone?.brand;
+            getElementById('phone-gps').innerText =single_phone?.others?.GPS;
+        })
 }
